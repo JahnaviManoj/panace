@@ -1,0 +1,17 @@
+#heading{
+  font-family: monospace;
+  text-align: center;
+  padding-top: 6%;
+}
+
+#userinfo{
+  padding-top: 6%;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
+}
+
+#controls{
+  padding-top: 3%;
+  text-align: center;
+}

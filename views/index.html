@@ -1,0 +1,32 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Speech to text</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/index.css">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    </head>
+    <body class="bg-success p-2 text-dark bg-opacity-10" style="
+        background-image: linear-gradient(rgb(117, 210, 162), rgb(255, 255, 255));">
+        
+        <h1 id = "heading">Speech to text</h1>
+        <div id="userinfo">
+            <label for="username">Enter username: </label>
+            <input type="text" id="username"/>
+        </div>
+        <div id="controls">
+            <button class="btn btn-outline-success" id="recordButton">Record</button>
+            <button class="btn btn-outline-success" id="pauseButton" disabled>Pause</button>
+            <button class="btn btn-outline-success" id="stopButton" disabled>Stop</button>
+        </div>
+        <h3>Recordings</h3>
+        <ol id="recordingsList"></ol><br><br>
+        <h3>Show previous recordings</h3>
+        <button type="button" class="btn btn-outline-success" onclick="getPrevRec()">View</button>
+        <ol id="prevRec"></ol>
+        <!-- inserting these scripts at the end to be able to use all the elements in the DOM  -->
+        <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+        <script src="/js/client.js"></script>
+    </body>
+</html>
