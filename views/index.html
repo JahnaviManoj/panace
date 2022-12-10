@@ -1,30 +1,82 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Speech to text</title>
+        <title>SPEECH TO TEXT</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/index.css">
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        body {
+        font-family: 'Poppins';
+        background: linear-gradient(90deg,#7bed9f, #3498db);
+      }
+      .btn{
+      margin-top: 1.5%;
+      display: inline-block;
+      outline: none;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 1;
+      border-radius: 500px;
+      transition-property: background-color,border-color,color,box-shadow,filter;
+      transition-duration: .3s;
+      border: 1px solid transparent;
+      letter-spacing: 2px;
+      min-width: 160px;
+      text-transform: uppercase;
+      white-space: normal;
+      font-weight: 700;
+      text-align: center;
+      padding: 16px 14px 18px;
+      color: #616467;
+      box-shadow: inset 0 0 0 2px #616467;
+      background-color: transparent;
+      height: 48px;
+    }
+      .btn:hover{
+          color: #fff;
+          background-color: #616467;
+      }
+      .inp{
+      position: relative;
+      cursor: text;
+      font-size: 14px;
+      line-height: 20px;
+      padding: 0 16px;
+      height: 48px;
+      background-color: #fff;
+      border: 1px solid #d6d6e7;
+      border-radius: 3px;
+      color: rgb(35, 38, 59);
+      box-shadow: inset 0 1px 4px 0 rgb(119 122 175 / 30%);
+      overflow: hidden;
+      transition: all 100ms ease-in-out;}
+
+      .inp:focus {
+          border-color: #3c4fe0;
+          box-shadow: 0 1px 0 0 rgb(35 38 59 / 5%);
+      }
+    
+    </style>
     </head>
-    <body class="bg-success p-2 text-dark bg-opacity-10" style="
-        background-image: linear-gradient(rgb(117, 210, 162), rgb(255, 255, 255));">
+    <body >
         
         <h1 id = "heading">Speech to text</h1>
         <div id="userinfo">
             <label for="username">Enter username: </label>
-            <input type="text" id="username"/>
+            <input class="inp" type="text" id="username"/>
         </div>
         <div id="controls">
-            <button class="btn btn-outline-success" id="recordButton">Record</button>
-            <button class="btn btn-outline-success" id="pauseButton" disabled>Pause</button>
-            <button class="btn btn-outline-success" id="stopButton" disabled>Stop</button>
+            <button class="btn " id="recordButton">Record</button>
+            <button class="btn " id="pauseButton" disabled>Pause</button>
+            <button class="btn " id="stopButton" disabled>Stop</button>
         </div>
-        <h3>Recordings</h3>
-        <ol id="recordingsList"></ol><br><br>
-        <h3>Show previous recordings</h3>
-        <button type="button" class="btn btn-outline-success" onclick="getPrevRec()">View</button>
-        <ol id="prevRec"></ol>
+        <h3 style="text-align:center;margin-top:30px">Recordings</h3>
+        <ul id="recordingsList" style="text-align: center;margin-top:30px"></ul><br><br>
+        <h3 style="text-align:center;margin-top:10px">Show Text of the Audio</h3>
+        <button  class="btn" style="margin:auto;display:block;" onclick="getPrevRec()">View</button>
+        <ul id="prevRec" style="text-align: center;margin-top:30px"></ul>
         <!-- inserting these scripts at the end to be able to use all the elements in the DOM  -->
         <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
         <script src="/js/client.js"></script>

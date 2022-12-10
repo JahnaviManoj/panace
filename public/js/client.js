@@ -92,6 +92,7 @@ function createDownloadLink(blob) {
 	
 	var upload = document.createElement('button');
 	upload.innerHTML = "Submit";
+    upload.classList.add('btn')
 	upload.addEventListener("click", function(event){
 		  var fd=new FormData();
 		  u_name = document.getElementById("username").value;
