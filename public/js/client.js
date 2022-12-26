@@ -132,7 +132,7 @@ function getPrevRec(){
 			rec_text = resp.response
 			for (let i = 0; i < rec_text.length; i++) {
 				var li = document.createElement('li');
-				li.innerHTML = rec_text[i]
+				li.innerHTML = "text:-  " + rec_text[i][0] + "&emsp;&emsp; gender:- " + rec_text[i][1]
 				document.getElementById("prevRec").appendChild(li);
 			}
 		})

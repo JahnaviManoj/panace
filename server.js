@@ -85,7 +85,8 @@ app.get('/api/stt/prev/:id',async (req, res) => {
   for await (const result of stt.find()) {
     if(result.user == req.params.id){
       var file_path = path.join(__dirname+'/public/uploads/out/'+result.fileid+'.txt');
-      var data = fs.readFileSync(file_path, 'utf8');
+      var file_data = fs.readFileSync(file_path, 'utf8');
+      data = [file_data, result.gender]
       arr.push(data)
     }
   }
